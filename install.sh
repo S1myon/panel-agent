@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-REPO="ТВОЙ-НИК/panel-agent"
+REPO="S1myon/panel-agent"
 VERSION="v0.1.0"
 URL="https://github.com/$REPO/releases/download/$VERSION/panel-agent"
 
