@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt pyinstaller
-      - run: pyinstaller --onefile --name panel-agent agent/__main__.py
+      - run: pyinstaller --onefile --name panel-agent --collect-submodules agent run.py
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v0.1.0
@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt pyinstaller
-      - run: pyinstaller --onefile --name panel-agent agent/__main__.py
+      - run: pyinstaller --onefile --name panel-agent --collect-submodules agent run.py
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v0.1.0
