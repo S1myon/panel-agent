@@ -3,6 +3,7 @@ name: Build
 on:
   push:
     tags: ['v*']
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -19,6 +20,7 @@ jobs:
       - run: pyinstaller --onefile --name panel-agent agent/__main__.py
       - uses: softprops/action-gh-release@v2
         with:
+          tag_name: v0.1.0
           files: dist/panel-agent
 
   windows:
@@ -32,4 +34,5 @@ jobs:
       - run: pyinstaller --onefile --name panel-agent agent/__main__.py
       - uses: softprops/action-gh-release@v2
         with:
+          tag_name: v0.1.0
           files: dist/panel-agent.exe
