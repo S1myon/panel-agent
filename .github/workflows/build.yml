@@ -4,13 +4,17 @@ on:
   push:
     tags: ['v*']
 
+permissions:
+  contents: write
+
 jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install -r requirements.txt pyinstaller
       - run: pyinstaller --onefile --name panel-agent agent/__main__.py
       - uses: softprops/action-gh-release@v2
@@ -22,7 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install -r requirements.txt pyinstaller
       - run: pyinstaller --onefile --name panel-agent agent/__main__.py
       - uses: softprops/action-gh-release@v2
