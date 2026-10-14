@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$repo = "ТВОЙ-НИК/panel-agent"
+REPO="S1myon/panel-agent"
 $version = "v0.1.0"
 $url = "https://github.com/$repo/releases/download/$version/panel-agent.exe"
 $dest = "$env:LOCALAPPDATA\panel-agent"
